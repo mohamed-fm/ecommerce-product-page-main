@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body class="min-h-screen font-sans bg-White relative ">
+  <div class="overlay  w-full h-full -z-10 absolute "></div>
+  <section id="nav" class=" px-5 min-[550px]:px-10 min-[550px]:mb-20 ">
+    <div class="container max-[1024px]:py-5  mx-auto  min-[550px]:border-b-2 border-b-Light-grayish-blue flex justify-between items-center">
+      <div class="flex flex-row-reverse min-[1024px]:flex-row items-center justify-center gap-2 min-[550px]:gap-10">
+        <img src="images/logo.svg" class="cursor-pointer" alt="logo">
+        <img id="menu" class="cursor-pointer min-[1024px]:hidden" src="images/icon-menu.svg" alt="icon-menu">
+        <div class="sidemenu hidden min-[1024px]:hidden  h-full p-10 fixed  z-30 top-0 left-0 min-w-80 bg-White shadow-2xl">
+          <button id="closeMenu" class="mb-10"><img src="images/icon-close.svg" alt="icon-close"></button>
+          <ul class=" flex flex-col  gap-10">
+            <li class=" hover:border-b-Orange border-b-2 border-b-White transition-colors font-normal"><a class=" text-lg text-Very-dark-blue font-bold" href="#">Collections</a></li>
+            <li class=" hover:border-b-Orange border-b-2 border-b-White transition-colors font-normal"><a class=" text-lg text-Very-dark-blue font-bold" href="#">Men</a></li>
+            <li class=" hover:border-b-Orange border-b-2 border-b-White transition-colors font-normal"><a class=" text-lg text-Very-dark-blue font-bold" href="#">Women</a></li>
+            <li class=" hover:border-b-Orange border-b-2 border-b-White transition-colors font-normal"><a class=" text-lg text-Very-dark-blue font-bold" href="#">About</a></li>
+            <li class=" hover:border-b-Orange border-b-2 border-b-White transition-colors font-normal"><a class="text-lg text-Very-dark-blue font-bold" href="#">Contact</a></li>
+          </ul>
+
+        </div>
+        <ul class="hidden min-[1024px]:flex items-center justify-center gap-10">
+          <li class="py-10 hover:border-b-Orange border-b-2 border-b-White transition-colors font-normal"><a class="py-10 text-lg text-Dark-grayish-blue" href="#">Collections</a></li>
+          <li class="py-10 hover:border-b-Orange border-b-2 border-b-White transition-colors font-normal"><a class="py-10 text-lg text-Dark-grayish-blue" href="#">Men</a></li>
+          <li class="py-10 hover:border-b-Orange border-b-2 border-b-White transition-colors font-normal"><a class="py-10 text-lg text-Dark-grayish-blue" href="#">Women</a></li>
+          <li class="py-10 hover:border-b-Orange border-b-2 border-b-White transition-colors font-normal"><a class="py-10 text-lg text-Dark-grayish-blue" href="#">About</a></li>
+          <li class="py-10 hover:border-b-Orange border-b-2 border-b-White transition-colors font-normal"><a class="py-10 text-lg text-Dark-grayish-blue" href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="flex justify-center items-center max-[550px]:gap-3 gap-10">
+        <div class="relative">
+          <button class='relative'><span id="notification" class="bg-Orange absolute -top-6 px-4 hidden rounded-2xl text-md text-White font-bold">0</span><img id="cart" class="cursor-pointer" src="images/icon-cart.svg" alt="icon-cart"></button>
+          <div class="insideCart max-[450px]:w-full max-[450px]:right-0 max-[550px]:top-40 max-[550px]:right-7 z-10 hidden min-[550px]:w-96 h-64  flex-col  bg-White shadow-2xl rounded-xl fixed top-20 right-10 ">
+            <div class="heading  p-5  items-center px-5 border-b-2 border-Light-grayish-blue">
+              <h4 class="font-sans font-bold text-Very-dark-blue text-lg">Cart</h4>
+            </div>
+            <div class="products  h-full flex flex-col justify-around p-5">
+              <div class="product hidden mb-4  items-center justify-between gap-4">
+                <img class="size-14 rounded-lg" src="images/image-product-1.jpg" alt="image-product-1">
+                <div class="inforamtion">
+                  <h5 class="font-sans text-Dark-grayish-blue text-lg">Fall Limited Edition Sneakers</h5>
+                  <p> $125.00  <span class="mx-0.5">x</span>  <span id="amount" class=" mr-1">0</span> <span id="totalValue" class="font-bold text-Very-dark-blue text-lg">$0.00</span></p>
+                </div>
+                <button id="delete"><img src="images/icon-delete.svg" alt="icon-delete"></button>
+              </div>
+              <div class="checkout hidden">
+                <button id="checkout" class="w-full py-4 hover:opacity-75 transition-opacity bg-Orange rounded-lg text-Very-dark-blue text-lg font-bold flex items-center justify-center gap-4"> checkout </button>
+              </div>
+              <h4 class="emptyText text-center   font-sans font-bold text-Very-dark-blue text-lg ">Your cart is empty</h4>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button><img class="cursor-pointer border-2 border-White hover:border-Orange rounded-[50%] transition-colors size-14 max-[550px]:size-9" src="./images/image-avatar.png" alt="image-avatar"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="lightBox" class="max-[1024px]:w-full max-[1024px]:top-[3.4%]  max-[1024px]:translate-y-24 hidden max-[550px]:hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+    <div class="container flex min-[1024px]:flex-row mx-auto flex-col items-center  2xl:px-52 max-[550px]:gap-8 max-[1220px]:gap-12 gap-48 justify-between min-[550px]:px-10">
+      <div class="relative product-imgs max-[1024px]:px-20 max-[700px]:px-0  w-full min-[1024px]:max-w-[32rem] min-[1024px]:w-[32rem]">
+        <button id="closelightbox" class="absolute size-6 -top-10 right-0"><svg class="scale" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><path  height="20" width="20" class="hover:fill-Orange transition-colors" d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg></button>
+        <div class="bg-center f cursor-pointer main-product-preview min-[550px]:mb-12 w-full h-[32rem] min-[550px]:rounded-2xl bg-cover bg-[url('./images/image-product-1.jpg')]"></div>
+        <div class="pagenation flex  justify-between  max-[550px]:flex absolute top-1/3 translate-y-1/3 -left-5 -right-5">
+          <button class="previous size-16  bg-White rounded-[50%] flex items-center justify-center relative">
+            <svg width="12" class="scale1 absolute left-4 translate-x-1" height="18"  xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" class ="  hover:stroke-Orange" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>          </button>
+          <button class="next size-16 relative bg-White rounded-[50%] flex items-center justify-center">
+            <svg class="scale1 right-2" width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path class="hover:stroke-Orange" d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+          </button>
+        </div>
+        
+        <div class="other-product-imgs max-[550px]:hidden flex justify-between">
+          <div data-bg="./images/image-product-1.jpg"  class="active other-product-img hover:opacity-80 cursor-pointer transition-opacity rounded-xl w-24 h-24 bg-cover bg-center bg-[url('./images/image-product-1-thumbnail.jpg')]"></div>
+          <div data-bg="./images/image-product-2.jpg" class="other-product-img hover:opacity-80 cursor-pointer transition-opacity rounded-xl w-24 h-24 bg-cover bg-center bg-[url('./images/image-product-2-thumbnail.jpg')]"></div>
+          <div data-bg="./images/image-product-3.jpg" class="other-product-img hover:opacity-80 cursor-pointer transition-opacity rounded-xl w-24 h-24 bg-cover bg-center bg-[url('./images/image-product-3-thumbnail.jpg')]"></div>
+          <div data-bg="./images/image-product-4.jpg" class="other-product-img hover:opacity-80 cursor-pointer transition-opacity rounded-xl w-24 h-24 bg-cover bg-center bg-[url('./images/image-product-4-thumbnail.jpg')]"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <section class="min-[550px]:px-10 pb-20 " id="main">
+    <div class="container flex min-[1024px]:flex-row mx-auto flex-col items-center  2xl:px-52 max-[550px]:gap-8 max-[1220px]:gap-12 gap-48 justify-between min-[550px]:px-10">
+      <div class="relative product-imgs max-[1024px]:px-20 max-[700px]:px-0  w-full min-[1024px]:max-w-[32rem] min-[1024px]:w-[32rem]">
+        <div class="bg-center min-[550px]:cursor-pointer max-[550px]:select-none max-[550px]:cursor-default main-product-preview min-[550px]:mb-12 w-full h-[32rem] min-[550px]:rounded-2xl bg-cover bg-[url('./images/image-product-1.jpg')]"></div>
+        <div class="pagenation  justify-between hidden max-[550px]:flex absolute top-1/2 -translate-y-1/2 left-4 right-4">
+          <button class="previous size-12 bg-White rounded-[50%] flex items-center justify-center"><img src="images/icon-previous.svg" alt="icon-previous"></button>
+          <button class="next size-12 bg-White rounded-[50%] flex items-center justify-center"><img src="images/icon-next.svg" alt="icon-next"></button>
+        </div>
+        <div class="other-product-imgs max-[550px]:hidden flex justify-between">
+          <div data-bg="./images/image-product-1.jpg"  class="mr-3 active other-product-img hover:opacity-80 cursor-pointer transition-opacity rounded-xl w-24 h-24 bg-cover bg-center bg-[url('./images/image-product-1-thumbnail.jpg')]"></div>
+          <div data-bg="./images/image-product-2.jpg" class=" mr-3 other-product-img hover:opacity-80 cursor-pointer transition-opacity rounded-xl w-24 h-24 bg-cover bg-center bg-[url('./images/image-product-2-thumbnail.jpg')]"></div>
+          <div data-bg="./images/image-product-3.jpg" class="mr-3 other-product-img hover:opacity-80 cursor-pointer transition-opacity rounded-xl w-24 h-24 bg-cover bg-center bg-[url('./images/image-product-3-thumbnail.jpg')]"></div>
+          <div data-bg="./images/image-product-4.jpg" class="other-product-img hover:opacity-80 cursor-pointer transition-opacity rounded-xl w-24 h-24 bg-cover bg-center bg-[url('./images/image-product-4-thumbnail.jpg')]"></div>
+        </div>
+      </div>
+      <div class="product-information max-[550px]:px-4">
+        <div class="product-name max-[550px]:mb-5 mb-10">
+          <h4 class="text-base mb-5 text-Dark-grayish-blue font-bold">SNEAKER COMPANY</h4>
+          <h1 class="text-5xl max-[550px]:text-3xl text-Very-dark-blue font-bold">Fall Limited Edition <br> Sneakers</h1>
+        </div>
+
+        <div class="product-description max-[550px]:mb-5 mb-10">
+          <p class="max-[550px]:text-base text-Dark-grayish-blue text-lg text-pretty ">  These low-profile sneakers are your perfect casual wear <br class="max-[550px]:hidden"> companion. Featuring a 
+            durable rubber outer sole, they’ll <br class="max-[550px]:hidden"> withstand everything the weather can offer.</p>
+        </div>
+
+        <div class="product-priceing mb-10 max-[550px]:flex justify-between items-center">
+          <div class="current-price flex items-center justify-between w-fit gap-5 min-[550px]:mb-5">
+            <h2 class="text-Very-dark-blue font-bold text-3xl">$125.00</h2>
+            <span class="text-center px-2 py-[1px] rounded-lg bg-Very-dark-blue font-bold text-lg text-White">50%</span>
+          </div>
+          <div class="formal-price">
+            <h3 class="text-Dark-grayish-blue font-bold text-lg line-through">$250.00</h3>
+          </div>
+        </div>
+        <div class="buttons flex min-[550px]:flex-row  flex-col items-center gap-4 ">
+          <button class="adding  bg-Light-grayish-blue max-[550px]:w-full w-52 p-4 py-4 rounded-lg flex justify-between items-center">
+            <img class="hover:opacity-60 transition-opacity" id="minus" src="images/icon-minus.svg" alt="icon-minus">
+            <span id="value" class="value font-bold text-Very-dark-blue text-lg">0</span>
+            <img class="hover:opacity-60 transition-opacity" id="plus" src="./images/icon-plus.svg" alt="icon-plus">
+          </button>
+          <button id="cartBtn" class="add-to-cart w-full py-4 hover:opacity-75 transition-opacity bg-Orange rounded-lg text-Very-dark-blue text-lg font-bold flex items-center justify-center gap-4"> 
+            <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" class="fill-Very-dark-blue" fill-rule="nonzero"/></svg>
+            Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <div class="absolute bottom-0 left-1/2 w-full text-center -translate-x-1/2">
+    Challenge by <a class="text-Orange text-balance " href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#" class="text-Orange text-balance ">Moahmed Ragheb</a>.
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
